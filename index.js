@@ -81,7 +81,7 @@ function alert() {
         })
     }
     button.addEventListener("click", function () {
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 1; i++) {
             randomString = `${i}`
 
             createAlert(randomString)
