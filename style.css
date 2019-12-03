@@ -44,4 +44,36 @@
 .current-time {
     margin: 1rem;
 }
-
+#alert-container{
+    margin-left: 10vw;
+    width: 80vw;
+    position: absolute;
+}
+.alert {
+    position: relative;
+    top: 0;
+    left: 25%;
+    width: 50%;
+    height: 10rem;
+    background-color: grey;
+    
+}
+.alert-dismiss{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+}
+.open-alert{
+    position: absolute;
+    background-color: firebrick;
+}
+#toast-container{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.toast {
+    border: 1px solid black;
+    padding: 1rem;
+}

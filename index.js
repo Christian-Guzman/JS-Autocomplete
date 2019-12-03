@@ -61,6 +61,59 @@ function currentTime() {
         currentTime.textContent = newString
     }
 }
+// ALERT //
+function alert() {
+    const alertContainer = document.createElement("div")
+    alertContainer.id = "alert-container"
+    document.body.appendChild(alertContainer)
+    const button = document.querySelector(".open-alert")
+    function createAlert(message) {
+        const alert = document.createElement("div")
+        alert.classList.add("alert")
+        alertContainer.appendChild(alert)
+        alert.textContent = message
+        const exitButton = document.createElement("button")
+        alert.appendChild(exitButton)
+        exitButton.textContent = 'x'
+        exitButton.classList.add("alert-dismiss")
+        exitButton.addEventListener("click", function () {
+            alertContainer.removeChild(alert)
+        })
+    }
+    button.addEventListener("click", function () {
+        for (let i = 0; i < 100; i++) {
+            randomString = `${i}`
+
+            createAlert(randomString)
+        }
+    })
+}
+function toasts() {
+    const button = document.querySelector(".toast")
+    const toastsContainer = document.createElement("div")
+    toastsContainer.id = "toast-container"
+    document.body.appendChild(toastsContainer)
+
+    button.addEventListener("click", function () {
+        createToast("Finally", 2000)
+    })
+    function createToast(message, duration) {
+        const toast = document.createElement("div")
+        toast.classList.add("toast")
+        toast.textContent = message
+        toastsContainer.appendChild(toast)
+        colorChanger(toast)
+        setTimeout(function () {
+            toastsContainer.removeChild(toast)
+        }, duration)
+    }
+    function colorChanger(toast) {
+        let r = Math.floor(Math.random() * 360)
+        toast.style.backgroundColor = `hsl(${r}, 100%, 70%)`
+    }
+}
+toasts()
+alert()
 resetCounter()
 counters()
 currentDate()
